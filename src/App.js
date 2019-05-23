@@ -11,7 +11,6 @@ function App() {
 
     const result = await axios.get(inbound);
 
-    console.log(result.data);
     const direction = result.data.predictions.direction;
 
     if (direction) {
@@ -45,15 +44,15 @@ function App() {
       times.sort();
 
       if (times.length > 0) {
-        time1 = times[0] + " mins";
+        time1 = times[0] + " min";
       }
       if (times.length > 1) {
-        time2 = times[1] + " mins";
+        time2 = times[1] + " min";
       }
 
       setContents(
         <div className="container">
-          <div>N Inbound</div>
+          <div className="route">N Inbound</div>
           <div className="time">{time1}</div>
           <div className="time">{time2}</div>
         </div>
