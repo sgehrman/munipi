@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background: black;
+  min-height: 100vh;
+  display: flex;
 }
 
 .App-logo {
@@ -23,6 +26,16 @@
   color: #61dafb;
 }
 
-.time {
-  font-size: 3em;
+.container {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+  .time {
+    font-size: 4em;
+    font-weight: bold;
+  }
 }

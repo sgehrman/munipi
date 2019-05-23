@@ -7,19 +7,36 @@ function App() {
 
   async function refresh() {
     const inbound =
-      "http://webservices.nextbus.com/service/publicJSONFeed?command=predictions&a=sf-muni&r=N_OWL&s=5206";
+      "http://webservices.nextbus.com/service/publicJSONFeed?command=predictions&a=sf-muni&r=N&s=5206";
 
     const result = await axios.get(inbound);
 
+    console.log(result.data);
     const direction = result.data.predictions.direction;
 
     if (direction) {
-      const predictions = direction.prediction;
-
       const times = [];
 
-      predictions.forEach(direction => {
-        times.push(parseInt(direction.minutes));
+      let directions = [];
+      if (!Array.isArray(direction)) {
+        directions.push(direction);
+      } else {
+        directions = direction;
+      }
+
+      directions.forEach(direction => {
+        const pred = direction.prediction;
+        let array = [];
+
+        if (!Array.isArray(pred)) {
+          array.push(pred);
+        } else {
+          array = pred;
+        }
+
+        array.forEach(p => {
+          times.push(parseInt(p.minutes));
+        });
       });
 
       let time1 = "";
@@ -35,7 +52,7 @@ function App() {
       }
 
       setContents(
-        <div>
+        <div className="container">
           <div>N Inbound</div>
           <div className="time">{time1}</div>
           <div className="time">{time2}</div>
@@ -49,7 +66,7 @@ function App() {
 
     const timer = setInterval(() => {
       refresh();
-    }, 10000);
+    }, 30000);
 
     return () => {
       clearInterval(timer);
