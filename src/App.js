@@ -41,7 +41,9 @@ function App() {
       let time1 = "";
       let time2 = "";
 
-      times.sort();
+      times.sort(function(a, b) {
+        return a - b;
+      });
 
       if (times.length > 0) {
         time1 = times[0] + " min";
