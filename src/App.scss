@@ -36,9 +36,15 @@
 
   .route {
     font-size: 2em;
+    margin-bottom: 10px;
   }
   .time {
-    font-size: 5em;
+    font-size: 6em;
     font-weight: bold;
+    line-height: 1;
+  }
+  .mins {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.7em;
   }
 }
