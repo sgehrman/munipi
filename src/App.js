@@ -86,13 +86,15 @@ function App() {
         <div className='route'>N Train</div>
         <div className='time'>{time1}</div>
         <div className='time'>{time2}</div>
-       </div>)
+      </div>
+    )
     setContents2(
       <div className='container'>
-         <div className='route'>29 Bus</div>
+        <div className='route'>29 Bus</div>
         <div className='time'>{twonine1}</div>
         <div className='time'>{twonine2}</div>
-      </div> )
+      </div>
+    )
   }, [])
 
   useEffect(() => {
@@ -107,10 +109,12 @@ function App() {
     }
   }, [refresh])
 
-  return <div className='App'>
-  {contents}
-  {contents2}
-  </div>
+  return (
+    <div className='App'>
+      {contents}
+      {contents2}
+    </div>
+  )
 }
 
 export default App
