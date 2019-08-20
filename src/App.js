@@ -83,13 +83,13 @@ function App() {
 
     setContents(
       <div className='container'>
-        <div className='route'>N</div>
+        <div className='route'>N Train</div>
         <div className='time'>{time1}</div>
         <div className='time'>{time2}</div>
        </div>)
     setContents2(
       <div className='container'>
-         <div className='route'>29</div>
+         <div className='route'>29 Bus</div>
         <div className='time'>{twonine1}</div>
         <div className='time'>{twonine2}</div>
       </div> )
