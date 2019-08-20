@@ -35,16 +35,14 @@
   color: white;
 
   .route {
-    font-size: 2em;
+    font-size: 4em;
+    font-weight: bold;
+    color: red;
     margin-bottom: 10px;
   }
   .time {
-    font-size: 6em;
+    font-size: 3em;
     font-weight: bold;
     line-height: 1;
-  }
-  .mins {
-    color: rgba(255, 255, 255, 0.3);
-    font-size: 0.7em;
   }
 }
